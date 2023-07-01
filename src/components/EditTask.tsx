@@ -3,6 +3,7 @@ import { FC } from "react";
 import { TaskData } from "@/types";
 import { doc, updateDoc } from "firebase/firestore";
 import { db } from "@/app/lib/config";
+import {FaEdit} from "react-icons/fa"
 
 interface EditTaskProps {
   task: TaskData;
@@ -58,7 +59,7 @@ const EditTask: FC<EditTaskProps> = ({ task, setTask }) => {
 
   return (
     <div>
-      <button className="btn btn-info btn-xs" onClick={handleModalEdit}>edit</button>
+      <button className="btn md:w-1/2 btn-info btn-xs" onClick={handleModalEdit}><FaEdit /></button>
       <input
         type="checkbox"
         className="modal-toggle"
@@ -103,7 +104,7 @@ const EditTask: FC<EditTaskProps> = ({ task, setTask }) => {
             </select>
             <div className="gap-5 flex justify-end">
               <button className="btn btn-neutral btn-sm" onClick={handleEdit}>
-                Edit
+                save
               </button>
               <button
                 className="btn btn-neutral btn-sm"
